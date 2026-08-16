@@ -111,13 +111,13 @@ function Home() {
         <div className="absolute inset-0 halo pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-16 sm:pt-24 sm:pb-24">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-14 items-center">
+          <div className="grid grid-cols-[1.15fr_0.85fr] sm:grid-cols-[1.1fr_0.9fr] lg:grid-cols-[1.1fr_0.9fr] gap-4 sm:gap-8 lg:gap-14 items-center">
             <div>
               <motion.h1
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="display text-[2.6rem] sm:text-6xl lg:text-[4.2rem] leading-[1.04] font-semibold text-chalk"
+                className="display text-[2rem] sm:text-6xl lg:text-[4.2rem] leading-[1.04] font-semibold text-chalk"
               >
                 Practice Interviews
                 <br />
@@ -173,14 +173,14 @@ function Home() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative flex items-center justify-center lg:justify-end"
+              className="relative flex items-center justify-center lg:justify-end min-w-0"
             >
               <div className="absolute inset-[-18%] pointer-events-none" />
 
               <motion.img
                 src={interviewImg}
                 alt="Candidate giving an AI mock interview on a laptop"
-                className="relative w-full max-w-[520px] object-contain opacity-95 saturate-125 select-none"
+                className="relative w-full max-w-[520px] sm:max-w-[420px] lg:max-w-[520px] object-contain opacity-95 saturate-125 select-none"
                 draggable={false}
                 animate={{ y: [0, -8, 0] }}
                 transition={{
