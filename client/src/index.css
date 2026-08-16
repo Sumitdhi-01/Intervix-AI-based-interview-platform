@@ -1,1 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-void: #08080a;
+  --color-canvas: #0b0b0d;
+  --color-panel: #141417;
+  --color-panel2: #1b1b1f;
+  --color-line: #26262b;
+  --color-line2: #333339;
+  --color-chalk: #f5f5f4;
+  --color-ash: #a1a1a6;
+  --color-dim: #6e6e76;
+  --color-ember: #ff5a1f;
+  --color-ember2: #ff8a3d;
+  --color-emberdim: #b93a10;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background:
+      radial-gradient(
+        ellipse 100% 55% at 50% -10%,
+        rgba(255, 90, 31, 0.035),
+        transparent 65%
+      ),
+      var(--color-canvas);
+    color: var(--color-chalk);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-ember);
+    color: #0b0b0d;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-canvas);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line2);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ember);
+  }
+}
+
+@layer utilities {
+  /* editorial mono label */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-dim);
+  }
+  .display {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+  }
+  /* blueprint grid backdrop */
+  .grid-bg {
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px
+      );
+    background-size: 64px 64px;
+  }
+  .glow-ember {
+    box-shadow:
+      0 0 0 1px rgba(255, 90, 31, 0.35),
+      0 22px 60px -28px rgba(255, 90, 31, 0.9);
+  }
+  .panel {
+    background: var(--color-panel);
+    border: 1px solid var(--color-line);
+  }
+  .panel-hover {
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+  .panel-hover:hover {
+    border-color: var(--color-line2);
+    background: var(--color-panel2);
+  }
+  .text-grad-ember {
+    background: linear-gradient(
+      100deg,
+      var(--color-ember2),
+      var(--color-ember)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-ember {
+    background: linear-gradient(
+      100deg,
+      var(--color-ember2),
+      var(--color-ember)
+    );
+    color: #0b0b0d;
+    font-weight: 600;
+  }
+  .halo {
+    background: radial-gradient(
+      ellipse 100% 80% at 50% 0%,
+      rgba(255, 90, 31, 0.035),
+      rgba(255, 90, 31, 0.012) 40%,
+      transparent 70%
+    );
+    -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 50%, transparent 100%);
+  }
+
+  .noise {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 4px 4px;
+  }
+  .marquee-track {
+    animation: marquee 26s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 90, 31, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 18px rgba(255, 90, 31, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 90, 31, 0);
+    }
+  }
+  .pulse-ring {
+    animation: pulse-ring 1.8s ease-out infinite;
+  }
+}

@@ -7,7 +7,7 @@ function InterviewPage() {
   const [step, setStep] = useState(1);
   const [interviewData, SetInterviewData] = useState(null);
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-canvas grid-bg">
       {step === 1 && (
         <Step1Setup
           onStart={(data) => {
