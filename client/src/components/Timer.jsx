@@ -5,17 +5,19 @@ import "react-circular-progressbar/dist/styles.css";
 function Timer({ timeLeft, totalTime }) {
   const percentage = (timeLeft / totalTime) * 100;
   return (
-    <div className="w-20 h-20">
+    <div className="relative w-20 h-20">
       <CircularProgressbar
         value={percentage}
         text={`${timeLeft}s`}
         styles={buildStyles({
-          textSize: "28px",
-          pathColor: "#10b981",
-          textColor: "#ef4444",
-          trailColor: "#e5e7eb",
+          textSize: "22px",
+          pathColor: "#ff5a1f",
+          textColor: "#f5f5f4",
+          trailColor: "#26262b",
+          pathTransitionDuration: 0.5,
         })}
       />
+      <div className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: "0 0 0 1px rgba(255,90,31,0.25)" }} />
     </div>
   );
 }

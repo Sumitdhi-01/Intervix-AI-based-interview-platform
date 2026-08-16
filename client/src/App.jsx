@@ -10,7 +10,8 @@ import InterviewHistory from "./pages/InterviewHistory.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import InterviewReport from "./pages/InterviewReport.jsx";
 
-export const serverUrl = "https://intervix-ai-based-interview-platform.onrender.com";
+export const serverUrl =
+  "https://intervix-ai-based-interview-platform.onrender.com";
 
 function App() {
   const dispatch = useDispatch();
