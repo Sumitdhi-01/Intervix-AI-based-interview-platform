@@ -111,87 +111,118 @@ function Home() {
         <div className="absolute inset-0 halo pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-16 sm:pt-24 sm:pb-24">
-          <div className="grid grid-cols-[1.15fr_0.85fr] sm:grid-cols-[1.1fr_0.9fr] lg:grid-cols-[1.1fr_0.9fr] gap-4 sm:gap-8 lg:gap-14 items-center">
-            <div>
-              <motion.h1
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="display text-[2rem] sm:text-6xl lg:text-[4.2rem] leading-[1.04] font-semibold text-chalk"
-              >
-                Practice Interviews
-                <br />
-                with <span className="text-grad-ember">AI Intelligence</span>
-              </motion.h1>
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-14 items-center">
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.15 }}
-                className="text-ash mt-7 max-w-lg text-base sm:text-lg leading-relaxed"
-              >
-                Role-based mock interviews with smart follow-ups, adaptive
-                difficulty and real-time performance evaluation.
-              </motion.p>
+  <div className="relative">
 
-              <div className="flex flex-wrap gap-3 sm:gap-4 mt-10">
-                <motion.button
-                  onClick={() => go("/interview")}
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="btn-ember h-12 px-8 rounded-xl glow-ember"
-                >
-                  Start Interview
-                </motion.button>
-                <motion.button
-                  onClick={() => go("/history")}
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="h-12 px-8 rounded-xl border border-line text-chalk hover:border-ember hover:text-ember transition-colors"
-                >
-                  View History
-                </motion.button>
-              </div>
+    <div className="relative sm:pr-0 pr-[125px] lg:pr-0">
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-9 text-xs text-ash">
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-ember" />
-                  No setup required
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-ember" />
-                  Voice or text
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-ember" />
-                  Instant scored report
-                </span>
-              </div>
-            </div>
+      <motion.h1
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="display text-[2rem] sm:text-6xl lg:text-[4.2rem] leading-[1.04] font-semibold text-chalk"
+      >
+        Practice Interviews
+        <br />
+        with <span className="text-grad-ember">AI Intelligence</span>
+      </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative flex items-center justify-center lg:justify-end min-w-0"
-            >
-              <div className="absolute inset-[-18%] pointer-events-none" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-[115px] sm:hidden"
+      >
+        <motion.img
+          src={interviewImg}
+          alt="Candidate giving an AI mock interview on a laptop"
+          className="w-full object-contain opacity-95 saturate-125 select-none"
+          draggable={false}
+          animate={{ y: [0, -8, 0] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </motion.div>
 
-              <motion.img
-                src={interviewImg}
-                alt="Candidate giving an AI mock interview on a laptop"
-                className="relative w-full max-w-[520px] sm:max-w-[420px] lg:max-w-[520px] object-contain opacity-95 saturate-125 select-none"
-                draggable={false}
-                animate={{ y: [0, -8, 0] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-            </motion.div>
-          </div>
-        </div>
+    </div>
+
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.15 }}
+      className="text-ash mt-7 max-w-lg text-base sm:text-lg leading-relaxed"
+    >
+      Role-based mock interviews with smart follow-ups, adaptive
+      difficulty and real-time performance evaluation.
+    </motion.p>
+
+    <div className="flex flex-nowrap gap-3 sm:gap-4 mt-10">
+      <motion.button
+        onClick={() => go("/interview")}
+        whileHover={{ y: -3 }}
+        whileTap={{ scale: 0.98 }}
+        className="btn-ember h-12 px-8 rounded-xl glow-ember flex-1 sm:flex-none"
+      >
+        Start Interview
+      </motion.button>
+
+      <motion.button
+        onClick={() => go("/history")}
+        whileHover={{ y: -3 }}
+        whileTap={{ scale: 0.98 }}
+        className="h-12 px-8 rounded-xl border border-line text-chalk hover:border-ember hover:text-ember transition-colors flex-1 sm:flex-none"
+      >
+        View History
+      </motion.button>
+    </div>
+
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-9 text-xs text-ash">
+      <span className="flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-ember" />
+        No setup required
+      </span>
+
+      <span className="flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-ember" />
+        Voice or text
+      </span>
+
+      <span className="flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-ember" />
+        Instant scored report
+      </span>
+    </div>
+
+  </div>
+
+  <motion.div
+    initial={{ opacity: 0, scale: 0.96 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.7, delay: 0.2 }}
+    className="relative hidden sm:flex items-center justify-center lg:justify-end min-w-0"
+  >
+    <div className="absolute inset-[-18%] pointer-events-none" />
+
+    <motion.img
+      src={interviewImg}
+      alt="Candidate giving an AI mock interview on a laptop"
+      className="relative w-full max-w-[520px] lg:max-w-[520px] object-contain opacity-95 saturate-125 select-none"
+      draggable={false}
+      animate={{ y: [0, -8, 0] }}
+      transition={{
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+  </motion.div>
+
+</div>        
+</div>
 
         {/* marquee */}
         <div className="border-t border-line overflow-hidden">
